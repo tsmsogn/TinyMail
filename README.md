@@ -24,21 +24,6 @@ Configure::write('Routing.prefixes', array('admin'));
 ?>
 ```
 
-### Adding User#getCurrentUserId() to store answerd user id (optional)
-
-```php
-<?php
-App::uses('AuthComponent', 'Controller/Component');
-
-class User extends AppModel {
-
-    public function getCurrentUserId() {
-        return AuthComponent::user('id'); // Example
-    }
-
-}
-```
-
 ## Lisence
 
 The MIT License (MIT)
