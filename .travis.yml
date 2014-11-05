@@ -1,0 +1,36 @@
+language: php
+ 
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+
+env:
+  - CAKE_VERSION=master
+
+before_script:
+  - git clone git://github.com/cakephp/cakephp ../cakephp && cd ../cakephp && git checkout $CAKE_VERSION
+  - mv ../TinyMail plugins/TinyMail
+  - chmod -R 777 ../cakephp/app/tmp
+  - sh -c "composer global require 'phpunit/phpunit=3.7.*'"
+  - sh -c "ln -s ~/.composer/vendor/phpunit/phpunit/PHPUnit ../cakephp/vendors/PHPUnit"
+  - sh -c "mysql -e 'CREATE DATABASE cakephp_test;'"
+  - echo "<?php
+    class DATABASE_CONFIG {
+    public \$test = array(
+      'datasource' => 'Database/Mysql',
+      'database' => 'cakephp_test',
+      'host' => '0.0.0.0',
+      'login' => 'travis',
+      'persistent' => false,
+    );
+    }" > ../cakephp/app/Config/database.php
+  - echo "
+    Configure::write('Routing.prefixes', array('admin'));
+    " >> ../cakephp/app/Config/core.php
+  - echo "
+    CakePlugin::load('TinyMail', array('bootstrap' => false, 'routes' => true));
+    " >> ../cakephp/app/Config/bootstrap.php
+
+script:
+  - ./lib/Cake/Console/cake test TinyMail AllTests --stderr
