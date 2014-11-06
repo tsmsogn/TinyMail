@@ -16,6 +16,11 @@
 			<?php echo h($mail['Mail']['config']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Message'); ?></dt>
+		<dd>
+			<?php echo h($mail['Mail']['message']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('User Id'); ?></dt>
 		<dd>
 			<?php echo h($mail['Mail']['user_id']); ?>

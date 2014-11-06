@@ -76,6 +76,7 @@ class MailsControllerTest extends ControllerTestCase {
 		$data = array(
 			'Mail' => array(
 				'alias' => 'Lorem ipsum dolor sit amet',
+				'message' => 'Lorem ipsum dolor sit amet',
 			)
 		);
 

@@ -5,6 +5,7 @@
 	<?php
 		echo $this->Form->input('alias');
 		echo $this->Form->input('config');
+		echo $this->Form->input('message');
 		echo $this->Form->input('user_id');
 	?>
 	</fieldset>

@@ -6,6 +6,7 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('alias'); ?></th>
 			<th><?php echo $this->Paginator->sort('config'); ?></th>
+			<th><?php echo $this->Paginator->sort('message'); ?></th>
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('updated'); ?></th>
@@ -18,6 +19,7 @@
 		<td><?php echo h($mail['Mail']['id']); ?>&nbsp;</td>
 		<td><?php echo h($mail['Mail']['alias']); ?>&nbsp;</td>
 		<td><?php echo h($mail['Mail']['config']); ?>&nbsp;</td>
+		<td><?php echo h($mail['Mail']['message']); ?>&nbsp;</td>
 		<td><?php echo h($mail['Mail']['user_id']); ?>&nbsp;</td>
 		<td><?php echo h($mail['Mail']['created']); ?>&nbsp;</td>
 		<td><?php echo h($mail['Mail']['updated']); ?>&nbsp;</td>
