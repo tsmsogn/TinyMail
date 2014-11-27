@@ -1,5 +1,5 @@
 <div class="mails index">
-	<h2><?php echo __('Mails'); ?></h2>
+	<h2><?php echo __d('tiny_mail', 'Mails'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<thead>
 	<tr>
@@ -10,7 +10,7 @@
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('updated'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th class="actions"><?php echo __d('tiny_mail', 'Actions'); ?></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -24,9 +24,9 @@
 		<td><?php echo h($mail['Mail']['created']); ?>&nbsp;</td>
 		<td><?php echo h($mail['Mail']['updated']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $mail['Mail']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $mail['Mail']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $mail['Mail']['id']), array(), __('Are you sure you want to delete # %s?', $mail['Mail']['id'])); ?>
+			<?php echo $this->Html->link(__d('tiny_mail', 'View'), array('action' => 'view', $mail['Mail']['id'])); ?>
+			<?php echo $this->Html->link(__d('tiny_mail', 'Edit'), array('action' => 'edit', $mail['Mail']['id'])); ?>
+			<?php echo $this->Form->postLink(__d('tiny_mail', 'Delete'), array('action' => 'delete', $mail['Mail']['id']), array(), __d('tiny_mail', 'Are you sure you want to delete # %s?', $mail['Mail']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -35,20 +35,20 @@
 	<p>
 	<?php
 	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+	'format' => __d('tiny_mail', 'Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
 	));
 	?>	</p>
 	<div class="paging">
 	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->prev('< ' . __d('tiny_mail', 'previous'), array(), null, array('class' => 'prev disabled'));
 		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+		echo $this->Paginator->next(__d('tiny_mail', 'next') . ' >', array(), null, array('class' => 'next disabled'));
 	?>
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __d('tiny_mail', 'Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Mail'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__d('tiny_mail', 'New Mail'), array('action' => 'add')); ?></li>
 	</ul>
 </div>
